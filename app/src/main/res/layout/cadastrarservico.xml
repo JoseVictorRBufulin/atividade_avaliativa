@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cadastrarServicoLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CadastrarservicoActivity"> <!-- Ou o nome da sua Activity correspondente -->
+
+    <!-- Botão Voltar -->
+    <Button
+        android:id="@+id/buttonVoltarServico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Botão Sair -->
+    <Button
+        android:id="@+id/buttonSairServico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sair"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- ScrollView para listar serviços -->
+    <ScrollView
+        android:id="@+id/scrollViewServicos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/buttonVoltarServico"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCadastrarNovoServico"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutContainerServicos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--
+                Aqui você adicionará dinamicamente as Views para cada serviço
+                ou usará <include> para layouts de itens de serviço.
+
+                Exemplo de placeholder:
+            -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nenhum serviço cadastrado ainda."
+                android:gravity="center"
+                android:padding="20dp"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Botão Cadastrar Novo Serviço -->
+    <Button
+        android:id="@+id/buttonCadastrarNovoServico"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar Novo Serviço"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
